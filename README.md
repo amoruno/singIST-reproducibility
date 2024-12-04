@@ -4,5 +4,7 @@ This repository includes R scripts in code in the R codes folder to reproduce al
 | Figure/Table      | R script                       |
 | ------------ | --------------------------------- |
 | `Table 1` |  |
-| **Table 2**  | Texto en **negrita**              |
-| *Cursiva*    | Texto en *cursiva*                |
+| **Table 2**  |               |
+| Fig 3    | Texto en *cursiva*                |
+| Fig 4    | Texto en *cursiva*                |
+| Fig 5    | Texto en *cursiva*                |
