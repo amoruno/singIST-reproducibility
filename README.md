@@ -2,6 +2,10 @@
 ![gabst_01dic](https://github.com/user-attachments/assets/0d36443d-007f-423b-ae75-64bb1a3e23c2)
 This repository includes R scripts to reproduce all steps of singIST, including information from figures and tables from the original paper (bioRxiv, 2024). singIST is a method for comparative single-cell transcriptomics between disease models and humans, which provides explainable and quantiative insights into single-cell transcriptomics alignment. 
 
+## Table of Contents
+
+1. [Repository structure](#Repository structure)
+
 # Repository structure
 The repository is organized as follows:
 - `0_rawdata`: human scRNA-seq [(Bangert, 2021)](https://pubmed.ncbi.nlm.nih.gov/33483337/) and disease models scRNA-seq Seurat objects.
