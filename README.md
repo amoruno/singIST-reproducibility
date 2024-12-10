@@ -1,5 +1,5 @@
 # singIST-reproducibility
-![graphabst_final_modificat](https://github.com/user-attachments/assets/c88da776-ea65-4d13-bc32-c3c180ff0320)
+![gabst_01dic](https://github.com/user-attachments/assets/0d36443d-007f-423b-ae75-64bb1a3e23c2)
 This repository includes R scripts to reproduce all steps of singIST, including information from figures and tables from the original paper (bioRxiv, 2024). singIST is a method for comparative single-cell transcriptomics between disease models and humans, which provides explainable and quantiative insights into single-cell transcriptomics alignment. 
 
 # Repository structure
