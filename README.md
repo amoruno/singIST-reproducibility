@@ -3,7 +3,7 @@ This repository includes R scripts to reproduce all steps of singIST, including 
 
 # Repository structure
 The repository is organized as follows:
-- e
+- '0_rawdata': 
 - jeje
 
 # Associated code of figures and tables 
