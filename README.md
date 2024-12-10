@@ -4,8 +4,8 @@ This repository includes R scripts to reproduce all steps of singIST, including 
 
 # Repository structure
 The repository is organized as follows:
-- 0_rawdata: 
-- 1_input_preprocessing:
+- `0_rawdata`: 
+- 1_input_preprocessing: 
 - 
 
 Each report comes with a companion folder with the exported results. If the report name is 3_report.Rmd, the output folder will be 3_report_output/, so it is always caught by .gitignore. Important file locations are defined in the config.yml file and fecthed using the config R package.
