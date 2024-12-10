@@ -4,7 +4,7 @@ This repository includes R scripts to reproduce all steps of singIST, including 
 
 # Repository structure
 The repository is organized as follows:
-- `0_rawdata`: 
+- `0_rawdata`: human scRNA-seq [(Bangert, 2021)]([URL](https://pubmed.ncbi.nlm.nih.gov/33483337/)) and disease models scRNA-seq Seurat objects.
 - `1_input_preprocessing`: 
 - 
 
