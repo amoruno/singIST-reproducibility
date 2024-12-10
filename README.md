@@ -22,7 +22,7 @@ Each report comes with a companion folder with the exported results. If the repo
 # Requirements
 ## System Requierements
 ### Databricks script
-
+```
 R version 4.2.2 (2022-10-31)
 Platform: x86_64-pc-linux-gnu (64-bit)
 Running under: Ubuntu 22.04.5 LTS
@@ -42,6 +42,7 @@ attached base packages:
 
 loaded via a namespace (and not attached):
 [1] SparkR_3.4.1   compiler_4.2.2 tools_4.2.2    Rserve_1.8-12 
+```
 
 ### R script
 
