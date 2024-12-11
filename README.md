@@ -8,6 +8,7 @@ This repository includes R scripts to reproduce all steps of singIST, including 
 2. [Associated code of figures and tables](#Associated-code-of-figures-and-tables)
 3. [Setup Instructions](#Setup-Instructions)
 4. [Requirements](#Requirements)
+5. [R Dependencies](#R-Dependencies)
    
 
 # Repository structure
@@ -70,4 +71,4 @@ loaded via a namespace (and not attached):
 
 ### R script
 
-## R Dependencies
+# R Dependencies
