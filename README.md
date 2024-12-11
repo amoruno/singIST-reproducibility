@@ -13,7 +13,7 @@ This repository includes R scripts to reproduce all steps of singIST, including 
 
 # Repository structure
 The repository is organized as follows:
-- `0_raw_data`: human scRNA-seq data wrangling and gene set extraction with MsigDB.
+- `0_raw_data`: human scRNA-seq data wrangling and gene set extraction with MsigDB. Its code is in Databricks R scripts.
 - `1_input_preprocessing`: 
 - 
 
