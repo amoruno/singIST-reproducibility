@@ -32,12 +32,8 @@ Each report comes with a companion folder with the exported results. If the repo
 | Fig 5    | Texto en *cursiva*                |
 
 # Setup Instructions
-1. Clone the repository:
-```bash
-git clone https://github.com/amoruno/singIST-reproducibility.git
-```
-2. Ask repo owner (morunoaitor@gmail.com) JSON credentials to access Google Cloud Storage raw data folder.  
-3. Run following R script to download raw data:
+1. Ask repo owner (morunoaitor@gmail.com) JSON credentials to access Google Cloud Storage raw data folder.  
+2. Run following R script to download raw data:
 ```R
 install.packages(c("Seurat", "googleCloudStorageR"))
 library(googleCloudStorageR)
@@ -58,6 +54,10 @@ gcs_get_object("/diseasemodels/OXA_IMQ.rds", bucket = bucket_name,
 ## Human
 gcs_get_object("/human/human_bangert.rds", bucket = bucket_name, 
                saveToDisk = paste0(file_path, "human_bangert.rds"), overwrite = TRUE)
+```
+3. Clone the repository:
+```bash
+git clone https://github.com/amoruno/singIST-reproducibility.git
 ```
 # Requirements
 ## System Requierements
