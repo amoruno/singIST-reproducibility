@@ -52,7 +52,9 @@ gcs_get_object("/diseasemodels/OVA.rds", bucket = bucket_name,
 ## OXA+IMQ disease models
 gcs_get_object("/diseasemodels/OXA_IMQ.rds", bucket = bucket_name, 
                saveToDisk = paste0(file_path, "OXA_IMQ.rds"), overwrite = TRUE)
-## Human 
+## Human
+gcs_get_object("/human/human_bangert.rds", bucket = bucket_name, 
+               saveToDisk = paste0(file_path, "human_bangert.rds"), overwrite = TRUE)
 ```
 # Requirements
 ## System Requierements
