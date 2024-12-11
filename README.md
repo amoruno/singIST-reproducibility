@@ -30,6 +30,17 @@ Each report comes with a companion folder with the exported results. If the repo
 ```bash
 git clone https://github.com/amoruno/singIST-reproducibility.git
 ```
+2. Download raw data:
+```R
+install.packages(c("Seurat", "googleCloudStorageR"))
+library(googleCloudStorageR)
+gcs_auth("path_to_your_service_account_key.json")
+gcs_get_object("your_file.rds", bucket = "your_bucket_name", saveToDisk = "local_path/your_file.rds", overwrite = TRUE)
+seurat_object <- readRDS("local_path/your_file.rds")
+
+Sys.setenv("GCS_AUTH_FILE" = "path_to_your_service_account_key.json")
+gcs_auth(Sys.getenv("GCS_AUTH_FILE"))
+```
 # Requirements
 ## System Requierements
 ### Databricks script
