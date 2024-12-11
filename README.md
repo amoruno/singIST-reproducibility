@@ -33,7 +33,7 @@ Each report comes with a companion folder with the exported results. If the repo
 ```bash
 git clone https://github.com/amoruno/singIST-reproducibility.git
 ```
-2. Ask repo owner access to Google Cloud raw data folder.  
+2. Ask repo owner (morunoaitor@gmail.com) access to Google Cloud raw data folder.  
 3. Download raw data:
 ```R
 install.packages(c("Seurat", "googleCloudStorageR"))
