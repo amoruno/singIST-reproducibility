@@ -6,6 +6,7 @@ This repository includes R scripts to reproduce all steps of singIST, including 
 
 1. [Repository structure](#Repository-structure)
 2. [Associated code of figures and tables](#Associated-code-of-figures-and-tables)
+3. [Setup Instructions](#Setup-Instructions)
    
 
 # Repository structure
