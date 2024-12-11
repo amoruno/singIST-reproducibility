@@ -33,12 +33,16 @@ Each report comes with a companion folder with the exported results. If the repo
 ```bash
 git clone https://github.com/amoruno/singIST-reproducibility.git
 ```
-2. Ask repo owner (morunoaitor@gmail.com) access to Google Cloud raw data folder.  
+2. Ask repo owner (morunoaitor@gmail.com) JSON credentials to access Google Cloud Storage raw data folder.  
 3. Download raw data:
 ```R
 install.packages(c("Seurat", "googleCloudStorageR"))
 library(googleCloudStorageR)
-gcs_auth("path_to_your_service_account_key.json")
+
+credentials_JSON = "CREDENTIAL_FILE.json" # This is provided by the repo owner upon request
+bucket_name = "human_diseasemodel_data"
+
+gcs_auth("credentials_JSON.json")
 gcs_get_object("your_file.rds", bucket = "your_bucket_name", saveToDisk = "local_path/your_file.rds", overwrite = TRUE)
 seurat_object <- readRDS("local_path/your_file.rds")
 
