@@ -34,20 +34,25 @@ Each report comes with a companion folder with the exported results. If the repo
 git clone https://github.com/amoruno/singIST-reproducibility.git
 ```
 2. Ask repo owner (morunoaitor@gmail.com) JSON credentials to access Google Cloud Storage raw data folder.  
-3. Download raw data:
+3. Run following code to download raw data:
 ```R
 install.packages(c("Seurat", "googleCloudStorageR"))
 library(googleCloudStorageR)
 
-credentials_JSON = "CREDENTIAL_FILE.json" # This is provided by the repo owner upon request
+# Parameters
+credentials_JSON = "CREDENTIAL_FILE.json" # CHANGE to JSON file provided by repo owner
+file_path = "local_path/" # CHANGE to desired local path to download data
 bucket_name = "human_diseasemodel_data"
 
+# Download raw data in local folder
 gcs_auth("credentials_JSON.json")
-gcs_get_object("your_file.rds", bucket = "your_bucket_name", saveToDisk = "local_path/your_file.rds", overwrite = TRUE)
-seurat_object <- readRDS("local_path/your_file.rds")
-
-Sys.setenv("GCS_AUTH_FILE" = "path_to_your_service_account_key.json")
-gcs_auth(Sys.getenv("GCS_AUTH_FILE"))
+## OVA disease model
+gcs_get_object("/diseasemodels/OVA.rds", bucket = bucket_name, 
+               saveToDisk = paste0(file_path, "OVA.rds"), overwrite = TRUE)
+## OXA+IMQ disease models
+gcs_get_object("/diseasemodels/OXA_IMQ.rds", bucket = bucket_name, 
+               saveToDisk = paste0(file_path, "OXA_IMQ.rds"), overwrite = TRUE)
+## Human 
 ```
 # Requirements
 ## System Requierements
