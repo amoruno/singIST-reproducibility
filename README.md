@@ -25,6 +25,11 @@ Each report comes with a companion folder with the exported results. If the repo
 | Fig 4    | Texto en *cursiva*                |
 | Fig 5    | Texto en *cursiva*                |
 
+# Setup Instructions
+1. Clone the repository:
+```bash
+git clone https://github.com/amoruno/singIST-reproducibility.git
+
 # Requirements
 ## System Requierements
 ### Databricks script
