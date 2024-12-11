@@ -17,7 +17,7 @@ The repository is organized as follows:
 - `1_input_preprocessing`: 
 - `2_step1_singIST`: asmbPLS-DA model training, validity test of the optimal asmbPLS-DA, and parameter variabilities and significance.
 - `3_step2_3_4_singIST`: biological link function, computation of reference recapitulation metrics, computation of predicted recapitulation metrics, and predicted recapitulation metrics as a fraction of reference recapitulations.
-- `4_graphical_outputs`: 
+- `4_graphical_outputs`: graphics of superpathway recapitulation, observed one-to-one orthology, cell type recapitulation and gene contribution. 
   
 Each report comes with a companion folder with the exported results. If the report name is 3_report.Rmd, the output folder will be 3_report_output/, so it is always caught by .gitignore. Important file locations are defined in the config.yml file and fecthed using the config R package.
 
