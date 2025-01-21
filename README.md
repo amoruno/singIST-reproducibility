@@ -61,7 +61,7 @@ git clone https://github.com/amoruno/singIST-reproducibility.git
 ```
 # Requirements
 ## System Requierements
-### Databricks script
+### Databricks script (.dbs)
 ```
 R version 4.2.2 (2022-10-31)
 Platform: x86_64-pc-linux-gnu (64-bit)
@@ -84,6 +84,6 @@ loaded via a namespace (and not attached):
 [1] SparkR_3.4.1   compiler_4.2.2 tools_4.2.2    Rserve_1.8-12 
 ```
 
-### R script
+### R script (.R)
 
 # R Dependencies
