@@ -26,9 +26,9 @@ Each report comes with a companion folder with the exported results.
 | ------------ | --------------------------------- |
 | Table 1 | asmbPLSDA_validation.R  | 
 | Table 2  |  asmbPLSDA_validation.R            |
-| Fig 3    |               |
-| Fig 4    |                |
-| Fig 5    |                 |
+| Fig 3    |  figure_3.R             |
+| Fig 4    |  figure_4.R              |
+| Fig 5    |  figure_5.R               |
 
 # Setup Instructions
 1. Ask repo owner (morunoaitor@gmail.com) JSON credentials to access Google Cloud Storage raw data folder.  
