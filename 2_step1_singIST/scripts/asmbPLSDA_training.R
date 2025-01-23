@@ -1,12 +1,5 @@
-# libraries
-library(BiocGenerics)
-library(BiocFileCache)
-library(AnnotationHub)
-library(ExperimentHub)
-library(msigdb)
-
 # Load list with lognorm counts, gene set and pathway name
-all_input <- list.files("~/singIST-reproducibility/1_rawdata/exported_results/")
+all_input <- list.files("~/singIST-reproducibility/1_rawdata/exported_results/", pattern = "\\.RData$")
 
 for(i in all_input){
   # Load input
@@ -14,41 +7,30 @@ for(i in all_input){
 
   training_pathway <- 
     lapply(1, function(void){
-           # Filter only HC and AD lesional samples
+           output_dataset$Lognorm_counts <- as.data.frame(output_dataset$Lognorm_counts)
            pathway <- output_dataset
-           pathway$Lognorm_counts <- pathway$Lognorm_counts[pathway$Lognorm_counts$treatment_new %in% c("HC", "Baseline"),]
-           # Homogenize cell type annotation
-           homogenize_cell_type <- function(celltype) {
-             celltype <- ifelse(grepl("T", celltype, fixed = TRUE), "T-cell", celltype)
-             celltype <- ifelse(grepl("KC", celltype, fixed = TRUE), "Keratinocytes", celltype)
-             celltype <- ifelse(grepl("Melanocytes", celltype, fixed = TRUE), "Melanocytes", celltype)
-             celltype <- ifelse(grepl("DC", celltype, fixed = TRUE), "Dendritic Cells", celltype)
-             celltype <- ifelse(grepl("LC", celltype, fixed = TRUE), "Langerhan Cells", celltype)
-             return(celltype)
-           }
-           pathway$Lognorm_counts$CELLTYPE_new <- apply(pathway$Lognorm_counts["CELLTYPE_new"], 1, homogenize_cell_type)
+
+           # Split rownames into sample id and cell type 
+           split <- do.call(rbind, strsplit(rownames(pathway$Lognorm_counts), "_"))
+           pathway$Lognorm_counts$CELLTYPE_new <- split[,1]
+           pathway$Lognorm_counts$Sample_id <- split[,2]
+           
            # Filter only cell types to analyze
            pathway$Lognorm_counts <- pathway$Lognorm_counts[pathway$Lognorm_counts$CELLTYPE_new %in% c("T-cell", "Keratinocytes",
-                                                                                                       "Dendritic Cells", "Langerhan Cells",
+                                                                                                       "Dendritic Cells", "Langerhans Cells",
                                                                                                         "Melanocytes"),]
-           # Create block of matrices X with the pseudobulk of log-normalized counts
-           aux_X.matrix <- aggregate(. ~ CELLTYPE_new + Sample_id,
-                                     pathway$Lognorm_counts[, colnames(pathway$Lognorm_counts) 
-                                                            %in% c(pathway$Gene_set, "Sample_id", "CELLTYPE_new")],
-                                     sum
-                                     )
+           # Create X.matrix block
            df_X.matrix <- data.frame("Sample_id" = unique(pathway$Lognorm_count$Sample_id))
+           aux_X.matrix <- pathway$Lognorm_counts
            cell_type_new <- unique(pathway$Lognorm_counts$CELLTYPE_new)
            for(i in cell_type_new){
              blockcells <- aux_X.matrix[aux_X.matrix$CELLTYPE_new == i, ]
-             colnames(blockcells)[(which(colnames(aux_X.matrix) == "Sample_id")+1):ncol(blockcells)] <- paste0(i, "*", colnames(blockcells)[(which(colnames(aux_X.matrix) == "Sample_id")+1):ncol(blockcells)])
+             colnames(blockcells)[1:(which(colnames(aux_X.matrix) == "CELLTYPE_new")-1)] <- paste0(i, "*", colnames(blockcells)[1:(which(colnames(aux_X.matrix) == "CELLTYPE_new")-1)])
              df_X.matrix <- merge(df_X.matrix, blockcells[, colnames(blockcells) != "CELLTYPE_new"], 
                                   by = "Sample_id")
            }
+             
            # Train asmbPLS-DA
-           library(asmbPLS)
-           library(RcppAlgos) # permuteGeneral function
-           
            ## Load parameters to train asmbPLS-DA
            pathway$Y.matrix <- as.matrix(ifelse(grepl("HC", df_X.matrix$Sample_id, fixed = TRUE), 0, 1))
            pathway$X.matrix <- as.matrix(df_X.matrix[, colnames(df_X.matrix) != "Sample_id"])
@@ -57,7 +39,6 @@ for(i in all_input){
                                                               m = length(cell_type_new), 
                                                               TRUE))
            colnames(pathway$quantile.comb.table.cv) <- paste0("block_", rep(1:length(cell_type_new),1))
-           
            # Set binary outcome
            pathway$outcome.type <- "binary"
            # LOOCV
@@ -82,12 +63,10 @@ for(i in all_input){
                                                   scale = TRUE,
                                                   outcome.type = "binary")
            # Save objects
-           filepath <- paste0("C:/Users/amoruno/OneDrive - Almirall S.A/Doctorat/Publication 1/All pathways analysis/output/",
+           filepath <- paste0("~/singIST-reproducibility/2_step1_singIST/exported_results/asmbPLSDA_training/",
                               pathway$Pathway_name, ".RData")
            object <- pathway
            save(object , file = filepath)
-           
            return(pathway)}
            )
-  rm(output_dataset) # remove this 
 }
