@@ -2,11 +2,11 @@
 all_input <- list.files("~/singIST-reproducibility/2_step1_singIST/exported_results/asmbPLSDA_training/", pattern = "\\.RData$")
 
 # IMQ/OXA
-imq_oxa <- readRDS(file = "C:/Users/amoruno/OneDrive - Almirall S.A/Doctorat/Publication 1/skin_integrated.rds")
+imq_oxa <- readRDS(file = "~/OXA_IMQ.rds")
 imq_oxa_ <- UpdateSeuratObject(imq_oxa)
 
 # OVA
-ova <- readRDS(file = "C:/Users/amoruno/OneDrive - Almirall S.A/Doctorat/Publication 1/TwoGroups_celltypes_group.rds")
+ova <- readRDS(file = "~/OVA.rds")
 ova_ <- UpdateSeuratObject(ova)
 
 # Identify clusters according to original annotations
