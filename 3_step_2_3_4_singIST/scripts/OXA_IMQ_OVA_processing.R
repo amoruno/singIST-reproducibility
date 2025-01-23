@@ -1,5 +1,5 @@
 # Load asmbPLS-DA fitted pathway object
-all_input <- list.files("C:/Users/amoruno/OneDrive - Almirall S.A/Doctorat/Publication 1/All pathways analysis/output", pattern = "\\.RData$")
+all_input <- list.files("~/singIST-reproducibility/2_step1_singIST/exported_results/asmbPLSDA_training/", pattern = "\\.RData$")
 
 # IMQ/OXA
 imq_oxa <- readRDS(file = "C:/Users/amoruno/OneDrive - Almirall S.A/Doctorat/Publication 1/skin_integrated.rds")
