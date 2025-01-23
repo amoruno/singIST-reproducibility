@@ -24,11 +24,11 @@ Each report comes with a companion folder with the exported results.
 # Associated code of figures and tables 
 | Figure/Table      | R script                       |
 | ------------ | --------------------------------- |
-| Table 1 |  |
-| Table 2  |               |
-| Fig 3    | Texto en *cursiva*                |
-| Fig 4    | Texto en *cursiva*                |
-| Fig 5    | Texto en *cursiva*                |
+| Table 1 |  | asmbPLSDA_validation.R
+| Table 2  |  asmbPLSDA_validation.R            |
+| Fig 3    |               |
+| Fig 4    |                |
+| Fig 5    |                 |
 
 # Setup Instructions
 1. Ask repo owner (morunoaitor@gmail.com) JSON credentials to access Google Cloud Storage raw data folder.  
