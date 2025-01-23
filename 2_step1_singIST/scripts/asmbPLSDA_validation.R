@@ -117,6 +117,6 @@ df_pvalues$Pathway_full_name <- c("Cytokine-Cytokine receptor interaction [KEGG]
                                   "Toll-like receptor signaling pathway [KEGG]"
                                   )
 
-filepath <- paste0("C:/Users/amoruno/OneDrive - Almirall S.A/Doctorat/Publication 1/All pathways analysis/output/Summary table/Table1_pvalues.RData")
+filepath <- paste0("~/singIST-reproducibility/exported_results/asmbPLSDA_validation/Table1_pvalues.RData")
 save(df_pvalues , file = filepath)
 
