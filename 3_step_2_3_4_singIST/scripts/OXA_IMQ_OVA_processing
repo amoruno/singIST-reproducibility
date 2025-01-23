@@ -1,17 +1,3 @@
-# Load libraries
-library(Seurat)
-library(biomaRt)
-library(reshape2)
-library(latex2exp)
-library(ggrepel)
-library(ggplot2)
-library(scales)
-library(ggforce)
-library(asmbPLS)
-library(dplyr) 
-library(viridis) 
-library(tidyverse)
-
 # Load asmbPLS-DA fitted pathway object
 all_input <- list.files("C:/Users/amoruno/OneDrive - Almirall S.A/Doctorat/Publication 1/All pathways analysis/output", pattern = "\\.RData$")
 
