@@ -6,11 +6,11 @@ library(ExperimentHub)
 library(msigdb)
 
 # Load list with lognorm counts, gene set and pathway name
-all_input <- list.files("C:/Users/amoruno/OneDrive - Almirall S.A/Doctorat/Publication 1/All pathways analysis/input")
+all_input <- list.files("~/singIST-reproducibility/1_rawdata/exported_results/")
 
 for(i in all_input){
   # Load input
-  load(paste0("C:/Users/amoruno/OneDrive - Almirall S.A/Doctorat/Publication 1/All pathways analysis/input", "/", i))
+  load(paste0("~/singIST-reproducibility/1_rawdata/exported_results", "/", i))
 
   training_pathway <- 
     lapply(1, function(void){
