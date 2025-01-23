@@ -24,7 +24,7 @@ Each report comes with a companion folder with the exported results.
 # Associated code of figures and tables 
 | Figure/Table      | R script                       |
 | ------------ | --------------------------------- |
-| Table 1 |  | asmbPLSDA_validation.R
+| Table 1 | asmbPLSDA_validation.R  | 
 | Table 2  |  asmbPLSDA_validation.R            |
 | Fig 3    |               |
 | Fig 4    |                |
