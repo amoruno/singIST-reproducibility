@@ -13,11 +13,11 @@ This repository includes R scripts to reproduce results, including information f
 
 # Repository structure
 The repository is organized as follows:
-- `0_pathways`: human scRNA-seq data wrangling and gene set extraction with MsigDB. Its code is in Databricks R scripts.
-- `1_step1_singIST`: asmbPLS-DA model training, validity test of the optimal asmbPLS-DA, and parameter variabilities and significance.
-- `2_step2_3_4_singIST`: biological link function, computation of reference recapitulation metrics, computation of predicted recapitulation metrics, and predicted recapitulation metrics as a fraction of reference recapitulations.
-- `3_graphical_outputs`: graphics of superpathway recapitulation, observed one-to-one orthology, cell type recapitulation and gene contribution.
-- `4_Misc`: makefile, gnumake.
+- `1_pathways`: human scRNA-seq data wrangling and gene set extraction with MsigDB. Its code is in Databricks R scripts.
+- `2_step1_singIST`: asmbPLS-DA model training, validity test of the optimal asmbPLS-DA, and parameter variabilities and significance.
+- `3_step2_3_4_singIST`: biological link function, computation of reference recapitulation metrics, computation of predicted recapitulation metrics, and predicted recapitulation metrics as a fraction of reference recapitulations.
+- `4_graphical_outputs`: graphics of superpathway recapitulation, observed one-to-one orthology, cell type recapitulation and gene contribution.
+- `5_Misc`: makefile, gnumake.
   
 Each report comes with a companion folder with the exported results. 
 
