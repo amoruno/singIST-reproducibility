@@ -89,7 +89,7 @@ for(i in all_output){ # change to all_output
 adj.pvalues <- sapply(p.adjust(pvalues, method = "BH", n = length(pvalues)), pval)
 
 # Save pvalues dataset for later reuse
-df_pvalues <- data.frame(Pathway_name = str_extract(all_input, "^[^.]*"), pvalues = pvalues, adj.pvalues = adj.pvalues)
+df_pvalues <- data.frame(Pathway_name = str_extract(all_output, "^[^.]*"), pvalues = pvalues, adj.pvalues = adj.pvalues)
 # Order by pvalue
 df_pvalues <- df_pvalues[order(df_pvalues$pvalues),]
 # Pathway full name
