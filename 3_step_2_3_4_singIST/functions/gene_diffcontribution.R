@@ -1,3 +1,4 @@
+# Description: compute gene contribution to cell type recapitulation for a disease model and cell type
 gene_diff_contribution <- function(disease_model_contribution, human_contribution, cell_ideal_recapitulation){
   cell_types <- rownames(cell_ideal_recapitulation)
   output <- data.frame()
