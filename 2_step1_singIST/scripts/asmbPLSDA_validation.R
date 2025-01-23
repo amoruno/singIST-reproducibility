@@ -1,4 +1,5 @@
 # Summary table contains Table 1 and table 2 information from the manuscript
+all_output <- list.files("~/singIST-reproducibility/2_step1_singIST/exported_results/asmbPLSDA_training/", pattern = "\\.RData$")
 summary_table <- replicate(length(all_output), list("Pathway_name" = NULL,
                                                     "Optimal_nPLS" = NULL,
                                                     "Gene_set_size" = NULL,
@@ -11,7 +12,7 @@ summary_table <- replicate(length(all_output), list("Pathway_name" = NULL,
 # Store global significance test pvalues
 pvalues <- c()
 for(i in all_output){ # change to all_output
-  load(paste0("C:/Users/amoruno/OneDrive - Almirall S.A/Doctorat/Publication 1/All pathways analysis/output", "/", i)) # change to i
+  load(paste0("~/singIST-reproducibility/2_step1_singIST/exported_results/asmbPLSDA_training", "/", i)) # change to i
   # Pathway name
   summary_table[[i]]$Pathway_name <- object$Pathway_name
   # Optimal number of PLS
