@@ -14,7 +14,7 @@ imq_oxa_clust <- imq_oxa_[,imq_oxa_$integrated_snn_res.0.35 %in% c(1, 3, 4, 6, 1
 imq_oxa_clust$stim <- factor(imq_oxa_clust$stim, levels = c("OXA", "ETOH", "IMQ", "VEH"), ordered = TRUE)
 
 ova_clust <- ova_[, ova_$celltype %in% c("T cells", "Keratinocytes",
-                                                    "Dendritic cells")] # Langerhan Cells are not considered since the disease model has < 100 cells
+                                                    "Dendritic cells")] # Langerhans Cells are not considered since the disease model has < 100 cells
                                                                          
 ova_clust$group <- factor(ova_clust$group, levels = c("OVA", "SAL"), ordered = TRUE)
 
