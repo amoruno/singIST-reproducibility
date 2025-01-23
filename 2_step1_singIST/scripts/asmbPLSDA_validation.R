@@ -80,3 +80,39 @@ for(i in all_output){ # change to all_output
   #rm(object)
   #rm(model_validation)
 }
+                             
+# Adjust global significance test p-value by Benjamini-Hochberg
+adj.pvalues <- sapply(p.adjust(pvalues, method = "BH", n = length(pvalues)), pval)
+
+# Save pvalues dataset for later reuse
+df_pvalues <- data.frame(Pathway_name = str_extract(all_input, "^[^.]*"), pvalues = pvalues, adj.pvalues = adj.pvalues)
+# Order by pvalue
+df_pvalues <- df_pvalues[order(df_pvalues$pvalues),]
+# Pathway full name
+df_pvalues$Pathway_full_name <- c("Cytokine-Cytokine receptor interaction [KEGG]", 
+                                  "Downstream signaling in naïve CD8+ T cells [PID]", 
+                                  "Chemokine receptors bind chemokines [REACTOME]",
+                                  "Dendritic cells in Th1/Th2 Development [BIOCARTA]",
+                                  "NOD-like receptor signaling pathway [PID]",
+                                  "Cytokine Network [BIOCARTA]",
+                                  "Inflammation pathway [BIOCARTA]",
+                                  "IL2 signaling events mediated by STAT5 [PID]",
+                                  "IL23-mediated signaling events [PID]",
+                                  "IL4-mediated signaling events [PID]",
+                                  "Hematopoietic cell lineage [KEGG]",
+                                  "Cytokine signaling in Immune system [REACTOME]",
+                                  "Signaling by Interleukins [REACTOME]",
+                                  "IL12 signaling mediated by STAT4 [PID]",
+                                  "CXCR3-mediated signaling events [PID]",
+                                  "T cell receptor signaling pathway [KEGG]",
+                                  "Asthma [KEGG]",
+                                  "Th1/Th2 Differentiation [BIOCARTA]",
+                                  "Chemokine signaling pathway [KEGG]",
+                                  "JAK-STAT signaling pathway [KEGG]",
+                                  "CD40/CD40L signaling [PID]",
+                                  "Toll-like receptor signaling pathway [KEGG]"
+                                  )
+
+filepath <- paste0("C:/Users/amoruno/OneDrive - Almirall S.A/Doctorat/Publication 1/All pathways analysis/output/Summary table/Table1_pvalues.RData")
+save(df_pvalues , file = filepath)
+
