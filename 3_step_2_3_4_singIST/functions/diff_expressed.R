@@ -1,3 +1,4 @@
+# Description: compute fold changes for disease model via FindMarkers
 diff_expressed <- function(SeuratObject, condition_1 = c(), condition_2 = c(), adjpval.treshold = 0.05,
                            logfc.treshold = 0.05){
   # FindMarkers function by row of dataset
