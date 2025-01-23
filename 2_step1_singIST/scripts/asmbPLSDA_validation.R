@@ -1,9 +1,12 @@
-# libraries
-library(BiocGenerics)
-library(BiocFileCache)
-library(AnnotationHub)
-library(ExperimentHub)
-library(msigdb)
+# Summary table contains Table 1 and table 2 information from the manuscript
+summary_table <- replicate(length(all_output), list("Pathway_name" = NULL,
+                                                    "Optimal_nPLS" = NULL,
+                                                    "Gene_set_size" = NULL,
+                                                    "adj_pvalue" = NULL,
+                                                    "lambdas" = NULL,
+                                                    "GIP_significant" = NULL,
+                                                    "GIP_adj_pvalue" = NULL,
+                                                    "CIP_pvalue" = NULL), simplify = FALSE)
 
 # Store global significance test pvalues
 pvalues <- c()
