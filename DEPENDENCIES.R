@@ -1,7 +1,4 @@
-library(BiocGenerics)
-library(BiocFileCache)
-library(AnnotationHub)
-library(ExperimentHub)
 library(msigdb)
 library(asmbPLS)
 library(RcppAlgos)
+library(stringr)
