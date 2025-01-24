@@ -85,7 +85,7 @@ orthologs <- lapply(seq_along(all_input), function(i, path_input = "/singIST-rep
                                               return(output)
                                             })
 
-save(orthologs, file = "C:/Users/amoruno/OneDrive - Almirall S.A/Doctorat/Publication 1/All pathways analysis/input_disease_model/Ortholog object/orthologs.RData")
+save(orthologs, file = "/singIST-reproducibility/2_step_2_3_4_singIST/exported_results/IMQ_OXA_OVA_processing/orthologs.RData")
 
 # Obtain superpathway dataset of each disease model
 pathway_disease_model <- lapply(seq_along(orthologs), function(i, dataset_oxa_imq = imq_oxa_pseudobulk_matrix, dataset_ova = ova_pseudobulk_matrix, 
@@ -238,7 +238,7 @@ pathway_disease_model <- lapply(seq_along(orthologs), function(i, dataset_oxa_im
   output$Ovalbumine$X.matrix <- X.matrix_ova
   output$Ovalbumine$Orthologs_observed <- genes_to_pick_hgnc
   
-  save_path <- paste0("C:/Users/amoruno/OneDrive - Almirall S.A/Doctorat/Publication 1/All pathways analysis/input_disease_model/Disease_Models_", output$Pathway_name, ".RData")
+  save_path <- paste0("/singIST-reproducibility/2_step_2_3_4_singIST/exported_results/IMQ_OXA_OVA_processing/", output$Pathway_name, ".RData")
   save(output, file = save_path)
   return(output)
 })
