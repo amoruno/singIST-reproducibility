@@ -1,6 +1,6 @@
 # Load asmbPLS-DA fitted pathway object
 all_input <- list.files("~/singIST-reproducibility/2_step1_singIST/exported_results/asmbPLSDA_training/", pattern = "\\.RData$")
-s
+
 # IMQ/OXA
 imq_oxa <- readRDS(file = "~/OXA_IMQ.rds")
 imq_oxa_ <- UpdateSeuratObject(imq_oxa)
