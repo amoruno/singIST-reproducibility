@@ -1,4 +1,5 @@
 # Load logFC in disease model
+~/singIST-reproducibility/3_step_2_3_4_singIST/exported_results/
 all_input_disease_model <- paste0("C:/Users/amoruno/OneDrive - Almirall S.A/Doctorat/Publication 1/All pathways analysis/input_disease_model/", list.files("C:/Users/amoruno/OneDrive - Almirall S.A/Doctorat/Publication 1/All pathways analysis/input_disease_model/", pattern = "\\.RData$"))
 all_input_human <- paste0("C:/Users/amoruno/OneDrive - Almirall S.A/Doctorat/Publication 1/All pathways analysis/output/", list.files("C:/Users/amoruno/OneDrive - Almirall S.A/Doctorat/Publication 1/All pathways analysis/output/", pattern = "\\.RData$"))
 
