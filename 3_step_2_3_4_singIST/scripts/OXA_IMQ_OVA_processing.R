@@ -62,7 +62,7 @@ logFC_OVA <- diff_expressed(ova_clust, condition_1 = unique(ova_clust$cell_type_
 logFC_FindMarkers <- list("Oxazolone" = logFC_OXA, "Imiquimod" = logFC_IMQ, "Ovalbumine" = logFC_OVA)
 
 # Select orthologs for each pathway for mus musculus organism
-orthologs <- lapply(seq_along(all_input), function(i, path_input = "/singIST-reproducibility/2_step1_singIST/exported_results/asmbPLSDA_training"){
+orthologs <- lapply(seq_along(all_input), function(i, path_input = "~/singIST-reproducibility/2_step1_singIST/exported_results/asmbPLSDA_training"){
                                               # Initiliaze output object to return
                                               output <- list("Pathway_name" = NULL, "Gene_set_observed" = c(),
                                                              "Gene_set_ortholog" = c(list("external_gene_name" = c(),
