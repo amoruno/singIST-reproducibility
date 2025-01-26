@@ -238,7 +238,7 @@ pathway_disease_model <- lapply(seq_along(orthologs), function(i, dataset_oxa_im
   output$Ovalbumine$X.matrix <- X.matrix_ova
   output$Ovalbumine$Orthologs_observed <- genes_to_pick_hgnc
   
-  save_path <- paste0("/singIST-reproducibility/3_step_2_3_4_singIST/exported_results/IMQ_OXA_OVA_processing/", output$Pathway_name, ".RData")
+  save_path <- paste0("~/singIST-reproducibility/3_step_2_3_4_singIST/exported_results/IMQ_OXA_OVA_processing/", output$Pathway_name, ".RData")
   save(output, file = save_path)
   return(output)
 })
