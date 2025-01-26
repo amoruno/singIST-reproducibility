@@ -83,7 +83,7 @@ loaded via a namespace (and not attached):
 ```
 
 ### R script (.R)
-
+```
 R version 4.4.2 (2024-10-31 ucrt)
 Platform: x86_64-w64-mingw32/x64
 Running under: Windows 10 x64 (build 19045)
@@ -104,6 +104,7 @@ attached base packages:
 
 loaded via a namespace (and not attached):
 [1] compiler_4.4.2 tools_4.4.2   
+```
 
 # R Dependencies
 
