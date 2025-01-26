@@ -84,4 +84,27 @@ loaded via a namespace (and not attached):
 
 ### R script (.R)
 
+R version 4.4.2 (2024-10-31 ucrt)
+Platform: x86_64-w64-mingw32/x64
+Running under: Windows 10 x64 (build 19045)
+
+Matrix products: default
+
+
+locale:
+[1] LC_COLLATE=Spanish_Spain.utf8  LC_CTYPE=Spanish_Spain.utf8   
+[3] LC_MONETARY=Spanish_Spain.utf8 LC_NUMERIC=C                  
+[5] LC_TIME=Spanish_Spain.utf8    
+
+time zone: Europe/Madrid
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.4.2 tools_4.4.2   
+
 # R Dependencies
+
+Find them in DEPENDENCIES.R
