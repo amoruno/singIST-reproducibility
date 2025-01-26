@@ -85,7 +85,7 @@ orthologs <- lapply(seq_along(all_input), function(i, path_input = "/singIST-rep
                                               return(output)
                                             })
 
-save(orthologs, file = "/singIST-reproducibility/2_step_2_3_4_singIST/exported_results/IMQ_OXA_OVA_processing/orthologs.RData")
+save(orthologs, file = "~/singIST-reproducibility/3_step_2_3_4_singIST/exported_results/IMQ_OXA_OVA_processing/orthologs.RData")
 
 # Obtain superpathway dataset of each disease model
 pathway_disease_model <- lapply(seq_along(orthologs), function(i, dataset_oxa_imq = imq_oxa_pseudobulk_matrix, dataset_ova = ova_pseudobulk_matrix, 
