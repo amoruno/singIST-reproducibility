@@ -1,8 +1,3 @@
-library("devtools")
-library("ComplexHeatmap")
-library("circlize")
-library("tidyverse")
-
 # Generate data frame with gene contributions to cell type recapitulation, each gene, cell type, disease model and pathway
 df_gene <- do.call(rbind, lapply(Pathway_recap, function(x){return(x$Gene)}))
 df_gene <- merge(df_pvalues, df_gene, by = "Pathway_name")
